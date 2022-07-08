@@ -1,7 +1,7 @@
 # JoyBot
 > JoyBot foi desenvolvido com discord.py consumindo algumas APIs do Valorant.
 
-BOT online e com o comando `=sorte`
+BOT online e com o comando `j.elo <nick> <tag>`
 
 <img src="https://i.ibb.co/C2Q5c2n/demonstracao.png" alt="Exemplo de Saída">
 
