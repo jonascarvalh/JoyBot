@@ -21,3 +21,17 @@ def rank_image(rank):
     for i in range(len(data)):
         if rank == data[i]['tierName']:
             return data[i]['largeIcon']
+
+
+# API: https://api.henrikdev.xyz/valorant/v1/account/{nick}/{tag}
+def banner_image(nick, tag):
+    base = 'https://api.henrikdev.xyz/valorant/v1/account'
+    
+    try:
+        response = requests.get(f'{base}/{nick}/{tag}')
+        data = response.json()
+    except:
+        print('Error API henrikdev')
+    data = data['data']
+
+    return data['account_level'], data['card']['wide']

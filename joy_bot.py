@@ -2,7 +2,7 @@ import discord
 from decouple import config
 from discord.ext import commands, tasks
 from discord.ext.commands.errors import MissingRequiredArgument, CommandNotFound
-from valorant_api import api_info
+from valorant_api import mmr_info
 
 bot = commands.Bot('j.')
 
@@ -25,7 +25,7 @@ async def on_command_error(ctx, error):
 async def elo(ctx, nick, tag):
     try:
         await ctx.message.add_reaction('\N{ballot box with check}')
-        await ctx.send(content=ctx.author.mention, embed=api_info(nick, tag))
+        await ctx.send(content=ctx.author.mention, embed=mmr_info(bot, nick, tag))
     except:
         await ctx.send('Comando incorreto! Digite _j.elo <nickname> <tagline>_')
         await ctx.send('Caso seu nick seja separado, junte')
